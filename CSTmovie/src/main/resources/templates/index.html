@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Movie Titles</title>
+</head>
+<body>
+	<h2>Movie Titles.</h2>
+	<p th:inline="text">Your movie will be [[${title}]]. Have a nice day!</p>
+	<p th:inline="text">The current time is [[${time}]]. </p>
+</body>
+</html>

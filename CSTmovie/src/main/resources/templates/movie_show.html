@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<title>Movie</title>
+</head>
+<body>
+<h2 th:inline="text">Movie is  [[${movie.movieTitle}]]</h2>
+
+Movie Title: <span th:inline="text"> [[${movie.movieTitle} ]] </span><br>
+Rating: <span th:inline="text"> [[${movie.rating} ]] </span><br>
+</body>
+</html>

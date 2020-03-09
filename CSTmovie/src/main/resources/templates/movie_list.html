@@ -8,13 +8,17 @@
 	<br>
 	<table>
 		<tr>
+			<th>Name</th>
 			<th>Title</th>
 			<th>Rating</th>
+			<th>Time</th>
 		</tr>
 
-		<tr th:each="Movie : ${movies}">
+		<tr th:each="movie : ${movie}">
+			<td th:text="${movie.name}"></td>
 			<td th:text="${movie.movieTitle}"></td>
 			<td th:text="${movie.rating}"></td>
+			<td th:text="${movie.time}"></td>
 		</tr>
 	</table>
 </body>

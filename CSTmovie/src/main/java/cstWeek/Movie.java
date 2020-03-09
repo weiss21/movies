@@ -7,6 +7,7 @@ import javax.validation.constraints.Size;
 @Entity
 public class Movie {
 
+	// Private class variables
 	@Id
 	@GeneratedValue
 	private long id;
@@ -18,13 +19,24 @@ public class Movie {
 	@NotNull
 	private Integer rating;
 	
+	@NotNull
+	private String time;
+	
+	@NotNull
+	@Size(min=3, max=25)
+	private String name;
+	
+	// Default Constructors
 	public Movie() {
-		movieTitle = "The Thing";
-		rating = 5;
+		name = null;
+		movieTitle = null;
+		rating = null;
+		time = new java.util.Date().toString();
 	}
 	
-	public Movie(String movieTitle, Integer rating) {
+	public Movie(String name, String movieTitle, Integer rating) {
 		super();
+		this.name = name;
 		this.movieTitle = movieTitle;
 		this.rating = rating;
 	}
@@ -38,6 +50,14 @@ public class Movie {
 		this.rating = rating;
 	}
 	
+	public void setTime(String time) {
+		this.time = time;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	public void setId(long id) {
 		this.id = id;
 	}
@@ -49,6 +69,14 @@ public class Movie {
 	
 	public Integer getRating() {
 		return this.rating;
+	}
+	
+	public String getTime() {
+		return this.time;
+	}
+	
+	public String getName() {
+		return this.name;
 	}
 	
 	public long getId() {

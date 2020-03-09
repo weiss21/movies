@@ -6,7 +6,9 @@
 <body>
 <h2>Movie Titles</h2>
 <form action="#" th:action="@{/movie}" th:object="${movie}" method="post">
-Title: <input type="text" th:field="*{movieTitle}" />
+Name:   <input type="text" th:field="*{name}" /><br>
+<span th:if="${#fields.hasErrors('*{name}')}" th:errors="*{name}"></span><br>
+Title:   <input type="text" th:field="*{movieTitle}" /> <br>
 <span th:if="${#fields.hasErrors('movieTitle')}" th:errors="*{movieTitle}"></span><br>
 Rating: <input type="text" th:field="*{rating}" />
 <span th:if="${#fields.hasErrors('*{rating}')}" th:errors="*{rating}"></span><br>

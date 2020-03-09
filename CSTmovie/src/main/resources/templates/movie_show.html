@@ -5,8 +5,9 @@
 </head>
 <body>
 <h2 th:inline="text">Movie is  [[${movie.movieTitle}]]</h2>
-
+Name :       <span th:inline="text"> [[${movie.name} ]] </span><br>
 Movie Title: <span th:inline="text"> [[${movie.movieTitle} ]] </span><br>
 Rating: <span th:inline="text"> [[${movie.rating} ]] </span><br>
+Time: <span th:inline="text">The current time is [[${movie.time}]]. </span><br>
 </body>
 </html>

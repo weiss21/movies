@@ -17,13 +17,14 @@ public class Intro {	//localhost:8080/intro?title=thing
 	@Autowired
 	MovieRepository movieRepository;
 	
+	//Sample Mapping
 	@GetMapping("/intro")
 	public String intro(@RequestParam("title") String title, Model model) {
 		model.addAttribute("title", title);
 		model.addAttribute("time", new java.util.Date().toString());
 		return "index";
 	}
-	
+	//Page to enter movie form.
 	@GetMapping("/movie/new")
 	public String createMovie(Model model) {
 		Movie movie = new Movie();
@@ -31,6 +32,7 @@ public class Intro {	//localhost:8080/intro?title=thing
 		return "movie_form";
 	}
 	
+	// Result Page
 	@PostMapping("/movie")
 	public String processMovieForm(@Valid Movie movie, 
 			BindingResult result, 
@@ -42,11 +44,14 @@ public class Intro {	//localhost:8080/intro?title=thing
 		return "movie_show";	
 	}
 	
+	//Movie Form Page when Refreshed.
 	@GetMapping("/movie")
 	public String getAllMovie(Model model) {
-		Iterable<Movie> movie = movieRepository.findAll();
-		model.addAttribute("movies", movie);
+		Iterable<Movie> movie = movieRepository.findMovieRatingsOrderByTitleDateDesc();
+		model.addAttribute("movie", movie);
 		return "movie_list";
 	}
 
+
+	
 }

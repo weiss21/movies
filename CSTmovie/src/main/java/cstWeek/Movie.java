@@ -1,6 +1,8 @@
 package cstWeek;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -17,6 +19,8 @@ public class Movie {
 	private String movieTitle;
 	
 	@NotNull
+	@Min(value = 1, message = "Rating should not be less than 1")
+    @Max(value = 5, message = "Rating should not be greater than 5")
 	private Integer rating;
 	
 	@NotNull
